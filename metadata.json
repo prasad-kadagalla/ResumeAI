@@ -1,0 +1,5 @@
+{
+  "name": "ResumeAI - Automated Screening System",
+  "description": "A powerful NLP-based HR automation tool that parses resumes, matches them against job descriptions using Gemini AI, and provides detailed analytics and ranking.",
+  "requestFramePermissions": []
+}
