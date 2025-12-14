@@ -1,0 +1,12 @@
+services:
+  - type: static
+    name: resumeai
+    repo: https://github.com/prasad-kadagalla/ResumeAI
+    branch: main
+    buildCommand: npm install && npm run build
+    publishPath: dist
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: OPENAI_API_KEY
+        sync: false
