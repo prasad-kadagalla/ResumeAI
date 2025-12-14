@@ -1,39 +1,38 @@
-import React, { useState } from 'react';
+import { useState, FormEvent } from "react";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({ email, password });
+    console.log("Login Data:", { email, password });
   };
 
   return (
-    <div className="p-6 max-w-md mx-auto">
-      <h1 className="text-xl font-medium mb-4">Login</h1>
+    <div style={{ padding: "24px", maxWidth: "400px", margin: "0 auto" }}>
+      <h1 style={{ fontSize: "20px", fontWeight: 500, marginBottom: "16px" }}>
+        Login
+      </h1>
 
-      <form onSubmit={handleSubmit} className="space-y-3">
+      <form onSubmit={handleSubmit} style={{ display: "flex", gap: "12px", flexDirection: "column" }}>
         <input
           type="email"
           placeholder="Email"
-          className="w-full border p-2 rounded"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <input
           type="password"
           placeholder="Password"
-          className="w-full border p-2 rounded"
           value={password}
+          required
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button
-          type="submit"
-          className="w-full bg-black text-white py-2 rounded"
-        >
+        <button type="submit">
           Login
         </button>
       </form>
